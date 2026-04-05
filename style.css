@@ -1,0 +1,59 @@
+:root { --primary: #2c3e50; --accent: #27ae60; --bg: #f4f7f6; --error: #e74c3c; }
+
+body { font-family: 'Segoe UI', Arial, sans-serif; background: var(--bg); margin: 0; padding: 20px; color: #333; }
+.container { max-width: 1100px; margin: auto; }
+
+header { text-align: center; margin-bottom: 30px; }
+#searchBar { width: 100%; max-width: 400px; padding: 12px 20px; border-radius: 25px; border: 1px solid #ddd; font-size: 16px; outline: none; }
+
+.book-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 20px; }
+
+.book-card { background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; cursor: pointer; height: 100%; display: flex; flex-direction: column; }
+.book-card:hover { transform: translateY(-5px); }
+
+.book-img-frame { width: 100%; height: 250px; background: #eee;overflow:hidden; }
+.book-img { width: 100%; height: 100%; object-fit: cover; }
+
+.book-info { padding: 15px; flex-grow: 1; }
+.book-title { font-weight: bold; font-size: 0.95rem; height: 2.4em; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+.strike-price { text-decoration: line-through; color: #999; font-size: 0.8rem; }
+.real-price { color: var(--error); font-weight: bold; font-size: 1.05rem; }
+
+/* Detail View */
+.detail-flex { display: flex; gap: 40px; flex-wrap: wrap; }
+.detail-img-frame { flex: 0 0 300px; }
+.detail-img { width: 100%; border-radius: 8px; object-fit: contain; max-height: 100%; }
+.btn-wa { display: inline-block; background: #25d366; color: white; padding: 15px 25px; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 20px; }
+.back-btn { background: #3498db; color: white; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-bottom: 20px; }
+/* Frame Foto di Detail agar Tetap Seragam */
+.detail-img-frame {
+    flex: 0 0 300px;         /* Lebar tetap 300px */
+    width: 300px;
+    height: 400px;          /* Tentukan tinggi tetap yang kamu inginkan */
+    background: #eee;       /* Warna latar jika gambar lebih kecil */
+    display: flex;
+    align-items: center;    /* Gambar ke tengah secara vertikal */
+    justify-content: center; /* Gambar ke tengah secara horizontal */
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.detail-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* KUNCI: Gambar tidak akan gepeng, tapi muat di dalam kotak */
+    background-color: #fff; /* Memberi kesan bersih jika rasio gambar beda */
+}
+
+/* Responsif untuk HP */
+@media (max-width: 768px) {
+    .detail-img-frame {
+        flex: 0 0 100%;
+        width: 100%;
+        max-width: 280px; /* Ukuran lebih kecil di HP */
+        margin: 0 auto 20px auto;
+    }
+
+}

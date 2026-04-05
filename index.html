@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Buku Baca Fun</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div id="main-ui">
+        <header>
+            <h1>📚 Katalog Buku</h1>
+            <input type="text" id="searchBar" placeholder="Cari judul atau penulis..." onkeyup="searchBook()">
+        </header>
+        <div id="book-container" class="book-grid"></div>
+    </div>
+
+    <div id="detail-ui" style="display: none;">
+        <button class="back-btn" onclick="closeDetail()">← Kembali</button>
+        <div id="detail-content"></div>
+    </div>
+</div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
